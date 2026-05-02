@@ -1,0 +1,43 @@
+{
+  "name": "@studb/k-siseup",
+  "version": "0.1.0",
+  "description": "Curated SKILL.md packs for structured, agent-assisted Korean writing — installs into your Claude Code project.",
+  "type": "module",
+  "bin": {
+    "k-siseup": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "bun run installer/cli.ts",
+    "build": "bun run scripts/build.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "prepublishOnly": "bun run build"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "skills",
+    "agent",
+    "korean",
+    "writing",
+    "literature"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  }
+}
