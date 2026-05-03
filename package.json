@@ -1,6 +1,6 @@
 {
-  "name": "@studb/k-siseup",
-  "version": "0.1.0",
+  "name": "k-siseup",
+  "version": "0.2.0",
   "description": "Curated SKILL.md packs for structured, agent-assisted Korean writing — installs into your Claude Code project.",
   "type": "module",
   "bin": {

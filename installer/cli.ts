@@ -89,10 +89,7 @@ async function installSkill(
   force: boolean,
 ): Promise<"installed" | "skipped" | "overwritten"> {
   const slug = skillSlug(skill);
-  const cat = skill.category;
-  const destDir = cat
-    ? join(targetRoot, cat, slug)
-    : join(targetRoot, slug);
+  const destDir = join(targetRoot, slug);
   const sourceDir = dirname(skill.path);
   const exists = await pathExists(destDir);
   if (exists && !force) return "skipped";
@@ -155,14 +152,13 @@ async function installAll(
   for (const s of skills) {
     const result = await installSkill(s, targetRoot, force);
     const slug = skillSlug(s);
-    const cat = s.category ? `${s.category}/` : "";
     const tag =
       result === "installed"
         ? "installed"
         : result === "overwritten"
         ? "updated"
         : "skipped (exists, use --force)";
-    process.stdout.write(`  ${tag.padEnd(36)} ${cat}${slug}\n`);
+    process.stdout.write(`  ${tag.padEnd(36)} ${slug}\n`);
   }
 }
 
