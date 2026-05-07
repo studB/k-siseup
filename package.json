@@ -21,7 +21,8 @@
     "build": "bun run scripts/build.ts",
     "typecheck": "tsc --noEmit",
     "test": "bun test",
-    "prepublishOnly": "bun run build"
+    "prepublishOnly": "bun run build",
+    "release": "npm version patch && npm publish"
   },
   "keywords": [
     "claude",
