@@ -37,3 +37,7 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 # claude assets exclude 
 CLAUDE.md
 .claude
+
+
+# refercenc
+refs/**/*
